@@ -1,0 +1,19 @@
+*** Settings ***
+Documentation     PASS
+Library           BuiltIn
+
+*** Variables ***
+${A1}             0
+
+*** Test Cases ***
+NotEqualInt
+    [Tags]    eq
+    ${A1}=    evaluate    ${A1} + 1
+    Log    ${A1}
+    Should Be Equal As Integers    ${A1}    2
+
+EqualInt
+    [Tags]    eq1
+    ${A1}=    evaluate    ${A1} + 1
+    Log    ${A1}
+    Should Be Equal As Integers    ${A1}    1
